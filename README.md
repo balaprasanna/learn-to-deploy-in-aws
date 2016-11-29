@@ -42,6 +42,6 @@
 #### mysql -u testuser -p
 #### use testdb
 #### show grants;
-#### create table customer (customer_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, first_name TEXT, last_name TEXT);
+``` create table customer (customer_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, first_name TEXT, last_name TEXT); ```
 
-#### CREATE TABLE `todo` ( `id` int(11) NOT NULL AUTO_INCREMENT, `text` varchar(45) DEFAULT NULL, `dueDate` varchar(45) DEFAULT NULL, `dueTime` varchar(45) DEFAULT NULL, `priority` varchar(45) DEFAULT NULL, `done` varchar(45) DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+``` CREATE TABLE `todo` ( `id` int(11) NOT NULL AUTO_INCREMENT, `text` varchar(45) DEFAULT NULL, `dueDate` varchar(45) DEFAULT NULL, `dueTime` varchar(45) DEFAULT NULL, `priority` varchar(45) DEFAULT NULL, `done` varchar(45) DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1;```
