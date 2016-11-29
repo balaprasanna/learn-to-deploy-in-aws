@@ -1,31 +1,31 @@
 # learn-to-deploy-in-aws
 
-## nodejs, and mysql needed to run this app
-## follow along the instruction to install git, mysql, nodejs and expose ports in aws
-## pull this repo and check for npm and node
-## then run the app
+#### nodejs, and mysql needed to run this app
+#### follow along the instruction to install git, mysql, nodejs and expose ports in aws
+#### pull this repo and check for npm and node
+#### then run the app
 
-## hostname -f
+#### hostname -f
 
-## @prepare-your-system
-## sudo apt-get update
-## sudo apt-get upgrade
+#### @prepare-your-system
+#### sudo apt-get update
+#### sudo apt-get upgrade
 
-## @to-install
-## sudo apt-get install mysql-server-5.7
+#### @to-install
+#### sudo apt-get install mysql-server-5.7
 
-## @to-configure-security-stuffs
-## which mysql_secure_installation
-## sudo mysql_secure_installation
+#### @to-configure-security-stuffs
+#### which mysql_secure_installation
+#### sudo mysql_secure_installation
 
-## @to-start,stop
-## sudo service mysql stop
-## sudo service mysql start
+#### @to-start,stop
+#### sudo service mysql stop
+#### sudo service mysql start
 
-@root
-mysql -u root -p
-create database testdb;
-create database todo;
+#### @root
+#### mysql -u root -p
+#### create database testdb;
+#### create database todo;
 
 use testdb
 use todo
