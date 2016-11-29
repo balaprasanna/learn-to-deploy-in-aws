@@ -1,6 +1,6 @@
 # learn-to-deploy-in-aws
 
-## nodejs, and mysql needed to run this app
+## git, nodejs, and mysql needed to run this app
 ## follow along the instruction to install git, mysql, nodejs and expose ports in aws
 ## pull this repo and check for npm and node
 ## then run the app
@@ -10,6 +10,9 @@
 ### @prepare-your-system
 #### sudo apt-get update
 #### sudo apt-get upgrade
+
+### @to-install-git
+#### sudo apt-get install git-all
 
 ### @to-install
 #### sudo apt-get install mysql-server-5.7
