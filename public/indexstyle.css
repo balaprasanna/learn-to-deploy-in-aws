@@ -1,0 +1,166 @@
+.greybox {
+    margin: 2vmin;
+    border: 1vmin solid #8c8b8b;
+    border-radius: 15px;
+    padding-bottom: 2vmin;
+}
+
+.titleIcon {
+    height: 9vmin;
+    width: 9vmin;
+    margin-top: -2.5vmin;
+}
+
+.title {
+    font-family: 'Arvo', serif;
+    font-size: 8vmin;
+    margin-bottom: 0;
+}
+
+hr.line1 {
+    background-color: #fff;
+    border-top: 1vmin dashed #8c8b8b;
+}
+
+.leftPanel {
+    border-right: 1vmin solid #8c8b8b;
+    padding: 1vmin;
+    min-height: 50vmin;
+}
+
+.itemStyle {
+    font-family: 'Indie Flower', cursive;
+    font-size: 5vmin;
+}
+
+.icons {
+    font-size: 3vmin;
+    padding-top: 2vmin;
+    padding-bottom: -2vmin;
+    margin: 1vmin;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    background-color: gray;
+}
+
+.priority-1 {
+    color: red;
+}
+
+.priority-2 {
+    color: darkslategrey;
+}
+
+.priority-3 {
+    color: cornflowerblue;
+}
+
+.done-true, .done-1 {
+    text-decoration: line-through;
+    color: gray;
+    font-style: italic;
+}
+
+/*css to replace checkboxes*/
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label {
+    background-image: url("checkbox-unchecked-gray-hi.png");
+    background-size: 5.5vmin;
+    height: 5.5vmin;
+    width: 5.5vmin;
+    display: inline-block;
+    padding: 0 0 0 0;
+    margin-bottom: -1vmin;
+}
+
+input[type=checkbox]:checked + label {
+    background: url("checkbox-checked-gray-md.png");
+    background-size: 5.5vmin;
+    height: 5.5vmin;
+    width: 5.5vmin;
+    display: inline-block;
+    padding: 0 0 0 0;
+    margin-bottom: -1vmin;
+
+}
+
+.rightPanel {
+    font-family: 'Arvo', serif;
+    font-size: 2.5vmin;
+    color: black;
+}
+
+.selectBoxHeight {
+    min-height: 6.2vmin;
+}
+
+input.ng-touched, #priority.ng-touched {
+    border: 0.5vmin solid black;
+}
+
+#priority {
+    font-size: 2.5vmin;
+    color: #A2ACB5;
+}
+
+.fakePlaceholder {
+    color: #C7C7CD;
+    font-family: 'Arvo', serif;
+    font-size: 2.5vmin;
+}
+
+.immediate {
+    font-size: 2.5vmin;
+    color: red;
+    font-family: 'Arvo', serif;
+}
+
+.normal {
+    font-size: 2.5vmin;
+    color: darkslategrey;
+    font-family: 'Arvo', serif;
+}
+
+.chill {
+    font-size: 2.5vmin;
+    color: cornflowerblue;
+    font-family: 'Arvo', serif;
+}
+
+.btn-primary, .btn-primary:disabled {
+    color: antiquewhite;
+    background-color: dimgrey;
+    border-color: lightgrey;
+    font-family: 'Indie Flower', cursive;
+    font-size: 6vmin;
+    border-radius: 7vmin;
+    padding-top: 2vmin;
+}
+
+.btn-primary:hover, .btn-primary:hover:disabled, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    color: antiquewhite;
+    background-color: slategrey;
+    border-color: darkslategray;
+    font-family: 'Indie Flower', cursive;
+    font-size: 7vmin;
+    border-radius: 5vmin;
+}
+
+@media (max-width: 992px) {
+    .leftPanel {
+        border-right: 0px;
+        padding: 1vmin;
+        height: auto;
+    }
+
+    .selectBox {
+        height: 8vmin;
+    }
+
+}
+
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todo">
+<head>
+    <meta charset="UTF-8">
+    <title>Doggo Todo</title>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" href="/angularjs-datetime-picker/angularjs-datetime-picker.css">
+    <link rel="stylesheet" href="indexstyle.css">
+</head>
+<body>
+<div class="container-fluid greybox"
+">
+<!--Title-->
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1 class="title text-center"><img class="titleIcon" src="Iconsmind-Outline-Dog.ico"/> Doggo Todo</h1>
+    </div>
+</div>
+<!--Line-->
+<hr class="line1">
+<!--Left Panel for List-->
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 leftPanel" ng-controller="MainBodyCtrl as ctrl">
+    <ul class="list-unstyled">
+        <li ng-repeat="todo in ctrl.listOfTasks | orderBy:'done'" class="itemStyle">
+                <span class="" ng-class="['priority-{{todo.priority}}', {'done-true': todo.done}]">
+                    {{todo.text}}({{ctrl.timeLeft(todo)}})
+                </span>
+
+
+            <input type="checkbox" name="checkbox" id="{{todo.id}}"
+                   ng-model="todo.done" ng-change="ctrl.updateTask(todo)"
+                   ng-true-value="1" ng-false-value="0">
+            <label for="{{todo.id}}"></label>
+            <button class="icons"><span class="glyphicon glyphicon-trash" ng-click="ctrl.deleteTask(todo)"></span></button>
+            <button class="icons" ng-click="ctrl.listItemUp($index)"
+                    ng-disabled="$first || todo.done"><span class="glyphicon glyphicon-chevron-up"></span></button>
+            <button class="icons" ng-click="ctrl.listItemDown($index)"
+                     ng-disabled="$last || todo.done"><span class="glyphicon glyphicon-chevron-down"></span></button>
+        </li>
+    </ul>
+    <hr class="line1">
+    <div ng-controller="FooterCtrl as foot">
+        <h1 class="itemStyle"><span class="glyphicon glyphicon-check"></span>
+            <b>Outstanding Tasks: {{foot.outstandingTasks()}} of {{foot.numberOfTasks()}}</b></h1>
+    </div>
+</div>
+<!--Right panel for Input Fields-->
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 rightPanel" ng-controller="SaveTaskCtrl as ctrl">
+    <form method="post" role="form" name="formV" novalidate autocomplete="off" ng-submit="ctrl.saveTask()">
+
+        <div class="form-group">
+            <label for="task" class="rightPanel">Task</label>
+            <input type="text" class="form-control selectBoxHeight rightPanel" name="task" id="task"
+                   placeholder="Jiayou!"
+                   ng-model="ctrl.task.text" required>
+            <span class="help-block rightPanel" ng-show="formV.task.$touched && formV.task.$invalid">
+                    What do you need to do?
+                </span>
+        </div>
+
+        <div class="form-group">
+            <label for="date" class="rightPanel">Due Date</label>
+            <input datetime-picker class="form-control selectBoxHeight rightPanel"
+                   date-format="dd/MM/yyyy hh:mma" close-on-select="false" placeholder="Tickity-tock"
+                   name="date" id="date" ng-model="ctrl.task.inputDate" required>
+            <span class="help-block rightPanel" ng-show="formV.date.$touched && formV.date.$invalid">
+                    Setting a due date will make you more productive.
+                </span>
+        </div>
+
+        <div class="form-group">
+            <label for="priority" class="rightPanel">Priority</label>
+            <select class="form-control selectBoxHeight" name="priority" id="priority" ng-model="ctrl.task.priority"
+                    minength="2">
+                <option value="" class="fakePlaceholder" selected disabled hidden>
+                    What's the task's priority?
+                </option>
+                <option value="1" class="immediate">Immediate!</option>
+                <option value="2" class="normal">Normal-</option>
+                <option value="3" class="chill">Chill~</option>
+            </select>
+
+            <span class="help-block rightPanel"
+                  ng-show="formV.priority.$touched && formV.priority.$invalid">
+                    How urgent is it?
+                </span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-click="ctrl.list();"
+                ng-disabled="formV.$invalid">
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Add
+        </button>
+    </form>
+</div>
+</div>
+
+</body>
+<script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/angular/angular.min.js"></script>
+<script type="text/javascript" src="/angularjs-datetime-picker/angularjs-datetime-picker.min.js"></script>
+<script type="text/javascript" src="todo.js"></script>
+<script type="text/javascript" src="service.js"></script>
+<script type="text/javascript" src="savetaskctrl.js"></script>
+<script type="text/javascript" src="mainbodyctrl.js"></script>
+<script type="text/javascript" src="FooterCtrl.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('select').on('change', function () {
+            $(this).css('color', $(this).find(':selected').css('color'));
+        });
+    });
+</script>
+
+</html>
