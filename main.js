@@ -3,10 +3,10 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
 var pool = mysql.createPool({
-    host: "db",
+    host: "localhost",
     port: 3306,
-    user: "root",
-    password: "123",
+    user: "testuser",
+    password: "password123",
     database: "todo",
     connectionLimit: 4
 });
