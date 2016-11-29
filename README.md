@@ -20,7 +20,7 @@
 ``` sudo apt-get install mysql-server-5.7 ```
 
 
-### @to-configure-security-stuffs ```
+### @to-configure-security-stuffs 
 ``` which mysql_secure_installation ```
 
 ``` sudo mysql_secure_installation ```
